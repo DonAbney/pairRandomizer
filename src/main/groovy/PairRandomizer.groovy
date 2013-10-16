@@ -1,12 +1,9 @@
 class PairRandomizer {
-    
-    public readNameFile(File developerNames) {
-        developerNames.readLines()
-    }
+   
+    def PAIR_SIZE = 2
 
     public pairDevelopers(developerNames) {
         Collections.shuffle(developerNames)
-        int pairSize  = 2
-        developerNames.collate(pairSize)
+        developerNames.collate(PAIR_SIZE)
     }
 }
