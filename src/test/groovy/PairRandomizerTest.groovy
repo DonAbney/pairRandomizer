@@ -1,6 +1,4 @@
-import groovy.util.GroovyTestCase
-
-class PairRandomizerTest extends GroovyTestCase {
+class PairRandomizerTest {
 
     def pairRandomizer
 
