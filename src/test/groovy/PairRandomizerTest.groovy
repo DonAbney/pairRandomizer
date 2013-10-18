@@ -33,7 +33,9 @@ class PairRandomizerTest extends GroovyTestCase {
 
     void testShouldTakeANullListAndReturnException() {
         def pairRandomizer = new PairRandomizer()
-        shouldFail({pairRandomizer.returnPairs(null)})
+        shouldFail(EmptyListException){
+            pairRandomizer.returnPairs(null)
+        }
     }
 
 }
