@@ -3,9 +3,14 @@ class EmptyListException extends Exception {}
 class PairRandomizer {
 
     def returnPairs(list) {
-        if(list == null) throw new EmptyListException()
-        if(list.size() == 0) return list
-        Collections.shuffle(list)
-        list.collate 2
+        switch (list?.size()) {
+            case null:
+                throw new EmptyListException()
+            case 0:
+                return list
+            default:
+                Collections.shuffle(list)
+                return list.collate(2)
+        }
     }
 }   
