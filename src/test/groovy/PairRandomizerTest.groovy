@@ -37,5 +37,13 @@ class PairRandomizerTest extends GroovyTestCase {
             pairRandomizer.returnPairs(null)
         }
     }
+    
+    void testShouldReturnDifferentListsForTwoCallsWithSameList() {
+        def pairRandomizer = new PairRandomizer()
+        def listOfNames = ['Don', 'DJ', 'Phil', 'Boyko', 'Henry', 'Chad', 'Cory', 'Kate', 'John', 'James']
+        def actualResultOne = pairRandomizer.returnPairs(listOfNames)
+        def actualResultTwo = pairRandomizer.returnPairs(listOfNames)
 
+        assert actualResultOne != actualResultTwo
+    }
 }
