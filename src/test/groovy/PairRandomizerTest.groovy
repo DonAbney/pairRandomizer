@@ -1,9 +1,14 @@
 import groovy.util.GroovyTestCase
 
 class PairRandomizerTest extends GroovyTestCase {
-    
+
+    PairRandomizer pairRandomizer
+
+    void setUp() {
+        pairRandomizer = new PairRandomizer()
+    }
+
     void testShouldTakeNameListOfTwoAndReturnPair() {
-        def pairRandomizer = new PairRandomizer()
         def listOfNames = ['Don', 'DJ']
         def actualResult = pairRandomizer.returnPairs(listOfNames)
         assertEquals(1, actualResult.size())
@@ -13,7 +18,6 @@ class PairRandomizerTest extends GroovyTestCase {
     }
 
     void testShouldTakeNameListOfThreeAndReturnAPairAndASingle() {
-        def pairRandomizer = new PairRandomizer()
         def listOfNames = ['Don', 'DJ', 'Boyko']
         def actualResult = pairRandomizer.returnPairs(listOfNames)
 
@@ -23,7 +27,6 @@ class PairRandomizerTest extends GroovyTestCase {
     }
 
     void testShouldTakeAnEmptyListAndReturnEmptyList() {
-        def pairRandomizer = new PairRandomizer()
         def listOfNames = []
         def actualResult = pairRandomizer.returnPairs(listOfNames)
 
@@ -32,14 +35,12 @@ class PairRandomizerTest extends GroovyTestCase {
     }
 
     void testShouldTakeANullListAndReturnException() {
-        def pairRandomizer = new PairRandomizer()
         shouldFail(EmptyListException){
             pairRandomizer.returnPairs(null)
         }
     }
     
     void testShouldReturnDifferentListsForTwoCallsWithSameList() {
-        def pairRandomizer = new PairRandomizer()
         def listOfNames = ['Don', 'DJ', 'Phil', 'Boyko', 'Henry', 'Chad', 'Cory', 'Kate', 'John', 'James']
         def actualResultOne = pairRandomizer.returnPairs(listOfNames)
         def actualResultTwo = pairRandomizer.returnPairs(listOfNames)
