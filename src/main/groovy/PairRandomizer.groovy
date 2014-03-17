@@ -1,8 +1,12 @@
 class EmptyListException extends Exception {}
 
 class PairRandomizer {
+    def returnPairs(List people) throws EmptyListException {
+        if(people == null)
+            throw new EmptyListException()
 
-    def returnPairs() {
-        1
+        Collections.shuffle(people)
+
+        people.collate(2)
     }
 }   
