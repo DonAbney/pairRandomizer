@@ -9,11 +9,8 @@ class PairRandomizerTest extends GroovyTestCase {
     }
 
     void testPairRandomizerMustTakeAList() {
-        try {
-            def actualResult = pairRandomizer.returnPairs()
-            assert false
-        } catch(EmptyListException e) {
-            assert true
+        shouldFail(EmptyListException) {
+            pairRandomizer.returnPairs(null)
         }
     }
 
